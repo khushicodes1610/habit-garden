@@ -1,26 +1,103 @@
 @import "tailwindcss";
 
+/* ─────────────────────────────────────────
+   Habit Garden — Global Design Foundation
+   ───────────────────────────────────────── */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f5f7f2;
+  --foreground: #183a24;
+
+  --garden-deep: #183a24;
+  --garden-green: #3f7d4a;
+  --garden-soft: #eaf4e7;
+  --garden-pale: #f5f7f2;
+
+  --text-primary: #183a24;
+  --text-secondary: #617365;
+  --text-muted: #718174;
+
+  --border-soft: #dce7d9;
+  --surface: #ffffff;
 }
 
+/* Tailwind theme variables */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
+  --color-garden-deep: var(--garden-deep);
+  --color-garden-green: var(--garden-green);
+  --color-garden-soft: var(--garden-soft);
+  --color-garden-pale: var(--garden-pale);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+
+  --color-border-soft: var(--border-soft);
+  --color-surface: var(--surface);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ─────────────────────────────────────────
+   Base
+   ───────────────────────────────────────── */
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  margin: 0;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ─────────────────────────────────────────
+   Selection
+   ───────────────────────────────────────── */
+
+::selection {
+  background: #cfe4c9;
+  color: #183a24;
+}
+
+/* ─────────────────────────────────────────
+   Buttons & Links
+   ───────────────────────────────────────── */
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* ─────────────────────────────────────────
+   Scrollbar
+   ───────────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #eef3eb;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b8cbb4;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #91aa8d;
 }
