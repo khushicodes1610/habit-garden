@@ -1,19 +1,25 @@
 export default function GardenSky() {
   return (
-    <div
-      className="absolute inset-0 overflow-hidden"
-      aria-hidden="true"
-    >
+    <>
       {/* Soft sunlight */}
-      <div className="absolute -right-20 -top-24 h-64 w-64 rounded-full bg-[#fff6c7]/50 blur-3xl" />
+      <div
+        className="absolute right-[12%] top-8 h-16 w-16 rounded-full bg-[#fff4c2]/70 blur-sm"
+        aria-hidden="true"
+      />
 
       {/* Cloud 1 */}
-      <div className="garden-float absolute left-[8%] top-10 flex items-end opacity-70">
+      <div
+        className="garden-float absolute left-[8%] top-10 opacity-70"
+        aria-hidden="true"
+      >
         <span className="text-3xl">☁️</span>
       </div>
 
       {/* Cloud 2 */}
-      <div className="garden-float absolute right-[13%] top-16 flex items-end opacity-60">
+      <div
+        className="garden-float absolute right-[13%] top-16 opacity-60"
+        aria-hidden="true"
+      >
         <span className="text-2xl">☁️</span>
       </div>
 
@@ -21,6 +27,15 @@ export default function GardenSky() {
       <div className="absolute left-[25%] top-[35%] h-1.5 w-1.5 rounded-full bg-white/70" />
       <div className="absolute left-[65%] top-[28%] h-1 w-1 rounded-full bg-white/60" />
       <div className="absolute right-[25%] top-[45%] h-1.5 w-1.5 rounded-full bg-white/60" />
-    </div>
+
+      {/* Tiny garden sparkles */}
+      <div className="absolute left-[45%] top-[22%] text-xs opacity-50">
+        ✦
+      </div>
+
+      <div className="absolute right-[38%] top-[38%] text-xs opacity-40">
+        ✦
+      </div>
+    </>
   );
 }
