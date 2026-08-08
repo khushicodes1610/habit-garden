@@ -21,7 +21,7 @@ export default function Plant({
 }: PlantProps) {
   return (
     <span
-      className={`inline-block ${plantSizes[size]} transition-transform duration-300 hover:-translate-y-1`}
+      className={`plant-sway inline-block ${plantSizes[size]} transition-transform duration-300 hover:scale-105`}
       role="img"
       aria-label={`${type} plant`}
     >
