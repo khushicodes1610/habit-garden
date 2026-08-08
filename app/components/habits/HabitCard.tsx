@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import HabitIcon from "./HabitIcon";
 import HabitProgress from "./HabitProgress";
 
@@ -18,6 +21,9 @@ export default function HabitCard({
   icon = "🌱",
   completed = false,
 }: HabitCardProps) {
+    const [isCompleted, setIsCompleted] = useState(completed);
+const [currentStreak, setCurrentStreak] = useState(streak);
+const [currentProgress, setCurrentProgress] = useState(progress);
   return (
     <article className="group rounded-3xl border border-border-soft bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
       <div className="flex items-start gap-4">
@@ -45,27 +51,34 @@ export default function HabitCard({
           </div>
 
           <div className="mt-5">
-            <HabitProgress progress={progress} />
+            <HabitProgress progress={currentProgress} />
           </div>
 
           <div className="mt-5 flex items-center justify-between">
             <div className="flex items-center gap-2 text-sm">
               <span aria-hidden="true">🔥</span>
               <span className="font-medium text-text-primary">
-                {streak} day streak
+                {currentStreak} day streak
               </span>
             </div>
 
             <button
-              type="button"
-              className={`rounded-xl px-4 py-2 text-sm font-semibold transition-all duration-200 ${
-                completed
-                  ? "bg-[#e5f0df] text-[#527443]"
-                  : "bg-[#31543b] text-white hover:-translate-y-0.5 hover:bg-[#27442f]"
-              }`}
-            >
-              {completed ? "✓ Completed" : "Complete"}
-            </button>
+  type="button"
+  onClick={() => {
+    if (isCompleted) return;
+
+    setIsCompleted(true);
+    setCurrentStreak((value) => value + 1);
+    setCurrentProgress((value) => Math.min(100, value + 10));
+  }}
+  className={`rounded-xl px-4 py-2 text-sm font-semibold transition-all duration-200 ${
+    isCompleted
+      ? "bg-[#e5f0df] text-[#527443]"
+      : "bg-[#31543b] text-white hover:-translate-y-0.5 hover:bg-[#27442f]"
+  }`}
+>
+  {isCompleted ? "✓ Completed" : "Complete"}
+</button>
           </div>
         </div>
       </div>
