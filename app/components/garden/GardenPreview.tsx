@@ -17,39 +17,39 @@ export default function GardenPreview({
         {/* Plants */}
 <div className="absolute inset-x-0 bottom-8 z-10 h-52">
   {/* Left sprout */}
-  {completedHabits >= 1 && (
-    <div className="absolute bottom-2 left-[10%]">
-      <Plant type="sprout" />
-    </div>
-  )}
+{completedHabits >= 1 && (
+  <div className="absolute bottom-2 left-[10%]">
+    <Plant type="sprout" size="sm" />
+  </div>
+)}
 
-  {/* Left flower */}
-  {completedHabits >= 2 && (
-    <div className="absolute bottom-1 left-[25%]">
-      <Plant type="flower" />
-    </div>
-  )}
+{/* Left flower */}
+{completedHabits >= 2 && (
+  <div className="absolute bottom-1 left-[25%]">
+    <Plant type="flower" size="md" />
+  </div>
+)}
 
-  {/* Main tree */}
-  {completedHabits >= 3 && (
-    <div className="absolute bottom-0 left-1/2 -translate-x-1/2">
-      <Plant type="tree" />
-    </div>
-  )}
+{/* Main tree */}
+{completedHabits >= 3 && (
+  <div className="absolute bottom-0 left-1/2 -translate-x-1/2">
+    <Plant type="tree" size="lg" />
+  </div>
+)}
 
-  {/* Right flower */}
-  {completedHabits >= 2 && (
-    <div className="absolute bottom-1 right-[25%]">
-      <Plant type="flower" />
-    </div>
-  )}
+{/* Right flower */}
+{completedHabits >= 2 && (
+  <div className="absolute bottom-1 right-[25%]">
+    <Plant type="flower" size="sm" />
+  </div>
+)}
 
-  {/* Right sprout */}
-  {completedHabits >= 1 && (
-    <div className="absolute bottom-2 right-[10%]">
-      <Plant type="sprout" />
-    </div>
-  )}
+{/* Right sprout */}
+{completedHabits >= 1 && (
+  <div className="absolute bottom-2 right-[10%]">
+    <Plant type="sprout" size="md" />
+  </div>
+)}
 
   <GardenGround />
 </div>
