@@ -1,11 +1,12 @@
+import TimeOfDay from "./TimeOfDay";
+
 export default function GardenSky() {
   return (
     <>
+      {/* Time-based atmosphere */}
+      <TimeOfDay />
+
       {/* Soft sunlight */}
-      <div
-        className="absolute right-[12%] top-8 h-16 w-16 rounded-full bg-[#fff4c2]/70 blur-sm"
-        aria-hidden="true"
-      />
 
       {/* Cloud 1 */}
       <div
