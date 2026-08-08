@@ -145,7 +145,7 @@ export default function Dashboard() {
   completedHabits={completedCount}
   progress={progress}
 />
-          </section>
+</section>
         </div>
       </div>
     </main>
