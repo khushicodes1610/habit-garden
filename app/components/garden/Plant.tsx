@@ -25,7 +25,7 @@ export default function Plant({
 
   return (
     <div
-      className={`plant-sway ${plantSizes[size]} transition-transform duration-300 hover:scale-105`}
+      className={`plant-grow plant-sway ${plantSizes[size]} transition-transform duration-300 hover:scale-105`}
     >
       {plant}
     </div>
