@@ -9,15 +9,15 @@ export default function GardenGround() {
 
       {/* Main ground */}
       <div
-        className="absolute bottom-0 h-12 w-full rounded-t-[50%] bg-[#6f9b58]"
-        aria-hidden="true"
-      />
+  className="absolute bottom-0 z-10 h-12 w-full rounded-t-[50%] bg-[#6f9b58]"
+  aria-hidden="true"
+/>
 
       {/* Foreground grass */}
       <div
-        className="absolute bottom-8 left-0 h-2 w-full bg-[#789f61]"
-        aria-hidden="true"
-      />
+  className="absolute bottom-8 left-0 z-10 h-2 w-full bg-[#789f61]"
+  aria-hidden="true"
+/>
 
       {/* Small grass details */}
       <div className="absolute bottom-11 left-[8%] text-sm opacity-70">
