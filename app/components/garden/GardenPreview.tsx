@@ -9,13 +9,32 @@ export default function GardenPreview() {
         <GardenSky />
 
         {/* Plants */}
-        <div className="absolute inset-x-0 bottom-8 z-10 flex items-end justify-center gap-5 sm:gap-7">
-          <Plant type="sprout" size="sm" />
-          <Plant type="flower" size="md" />
-          <Plant type="tree" size="lg" />
-          <Plant type="flower" size="md" />
-          <Plant type="sprout" size="sm" />
-        </div>
+        <div className="absolute inset-x-0 bottom-8 z-10 h-52">
+  {/* Left sprout */}
+  <div className="absolute bottom-0 left-[4%] sm:left-[12%]">
+    <Plant type="sprout" size="sm" />
+  </div>
+
+  {/* Left flower */}
+  <div className="absolute bottom-0 left-[20%] sm:left-[28%]">
+    <Plant type="flower" size="md" />
+  </div>
+
+  {/* Main tree */}
+<div className="absolute bottom-0 left-1/2 z-0 -translate-x-1/2">
+    <Plant type="tree" size="lg" />
+  </div>
+
+  {/* Right flower */}
+  <div className="absolute bottom-0 right-[20%] sm:right-[28%]">
+    <Plant type="flower" size="md" />
+  </div>
+
+  {/* Right sprout */}
+  <div className="absolute bottom-0 right-[4%] sm:right-[12%]">
+    <Plant type="sprout" size="sm" />
+  </div>
+</div>
 
         <GardenGround />
       </div>
