@@ -141,7 +141,10 @@ export default function Dashboard() {
               </p>
             </div>
 
-            <GardenPreview completedHabits={completedCount} />
+            <GardenPreview
+  completedHabits={completedCount}
+  progress={progress}
+/>
           </section>
         </div>
       </div>
