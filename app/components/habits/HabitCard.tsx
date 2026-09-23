@@ -1,9 +1,11 @@
 "use client";
 
+import { useState } from "react";
 import HabitIcon from "./HabitIcon";
 import HabitProgress from "./HabitProgress";
 
 type HabitCardProps = {
+  id: number;
   name: string;
   description: string;
   streak: number;
@@ -11,6 +13,8 @@ type HabitCardProps = {
   icon?: string;
   completed?: boolean;
   onToggle?: () => void;
+  onDelete?: () => void;
+  onEdit?: () => void;
 };
 
 export default function HabitCard({
@@ -21,10 +25,14 @@ export default function HabitCard({
   icon = "🌱",
   completed = false,
   onToggle,
+  onDelete,
+  onEdit,
 }: HabitCardProps) {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <div
-      className={`rounded-2xl bg-white p-5 shadow-sm ring-1 ring-black/5 transition-all duration-200 ${
+      className={`relative rounded-2xl bg-white p-5 shadow-sm ring-1 ring-black/5 transition-all duration-200 ${
         completed ? "opacity-80" : "hover:-translate-y-0.5"
       }`}
     >
@@ -49,13 +57,43 @@ export default function HabitCard({
               )}
             </div>
 
-            <button
-              type="button"
-              className="rounded-xl px-2 py-1 text-text-muted transition-colors hover:bg-[#f1f4ed] hover:text-text-primary"
-              aria-label={`More options for ${name}`}
-            >
-              ⋮
-            </button>
+            {/* More menu */}
+            <div className="relative">
+              <button
+                type="button"
+                onClick={() => setMenuOpen((open) => !open)}
+                className="rounded-xl px-2 py-1 text-lg text-text-muted transition-colors hover:bg-[#f1f4ed] hover:text-text-primary"
+                aria-label={`More options for ${name}`}
+              >
+                ⋮
+              </button>
+
+              {menuOpen && (
+  <div className="absolute right-0 top-10 z-30 w-32 rounded-xl bg-white p-1.5 shadow-lg ring-1 ring-black/10">
+    <button
+      type="button"
+      onClick={() => {
+        setMenuOpen(false);
+        onEdit?.();
+      }}
+      className="w-full rounded-lg px-3 py-2 text-left text-sm font-medium text-text-primary transition hover:bg-[#f1f4ed]"
+    >
+      ✏️ Edit
+    </button>
+
+    <button
+      type="button"
+      onClick={() => {
+        setMenuOpen(false);
+        onDelete?.();
+      }}
+      className="w-full rounded-lg px-3 py-2 text-left text-sm font-medium text-red-500 transition hover:bg-red-50"
+    >
+      🗑️ Delete
+    </button>
+  </div>
+)}
+            </div>
           </div>
 
           {/* Progress */}
